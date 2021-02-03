@@ -1,0 +1,51 @@
+# MariaDB(Mysql)
+
+## Install
+```bash
+# searches packages
+$ sudo apt-cache search mariadb | grep -e '^mariadb'
+
+# installs server and client 
+$ sudo apt-get install mariadb-server mariadb-client
+```
+
+## Starts and shutdown
+```bash
+# shows status
+$ sudo service mysql status
+
+# start mysql
+$ sudo service mysql start
+
+# stop mysql
+$ sudo service mysql stop
+```
+
+## Connects via client
+```bash
+# connect via client
+$ sudo mysql -u root -p
+```
+
+## Monitoring status summary
+```sql
+-- theads
+show status like '%Thread%';
+
+-- abort
+show status like '%Abort%';
+
+-- count by user,host
+select user,host,count(*) as count 
+from information_schema.processlist 
+group by user,host 
+order by count desc
+limit 10;
+
+-- process order by time
+select id,user,host,state,time_ms,substr(info,1,32) as info 
+from information_schema.processlist 
+order by time_ms desc 
+limit 10;
+
+```

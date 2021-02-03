@@ -11,7 +11,7 @@ $ sudo service influxdb start
 $ tail -F /var/log/influxdb/influxdb.log
 ```
 
-## connect for test
+## Connect for test
 ```sql
 $ influx
 Connected to http://localhost:8086 version 1.6.4
