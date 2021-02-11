@@ -1,7 +1,7 @@
 # GIT
 
 ## Installs
-```
+```shell
 // Ubuntu
 $ sudo apt-get install git
 // CentOS
@@ -14,4 +14,11 @@ https://git-scm.com/download/win
 ```shell
 $ git config --global credential.helper store
 ```
+
+## Reset file
+```shell
+$ git checkout [Source]
+```
+
+
 
