@@ -49,3 +49,15 @@ order by time_ms desc
 limit 10;
 
 ```
+## Creates database and user, grant privileges
+```sql
+-- creates database
+create database test_db;
+
+-- creates user
+create user 'test_user'@'%' identified by 'abcd1234!@#$';
+
+-- grant privileges
+grant all privileges on test_db.* to 'test_user'@'%';
+
+```
