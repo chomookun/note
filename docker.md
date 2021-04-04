@@ -8,7 +8,8 @@ user@host> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-ke
 user@host> sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 user@host> sudo apt update
 user@host> apt-cache policy docker-ce
-user@host> sudo apt install docker-ce
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
 
 # list docker version and process
 user@host> sudo service docker start
