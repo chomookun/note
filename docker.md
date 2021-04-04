@@ -1,4 +1,9 @@
-# Docker
+# Docker installation
+```bash
+# 
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+
 
 # Docker Build(Dockerfile)
 ```
