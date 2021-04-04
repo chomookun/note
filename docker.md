@@ -1,7 +1,24 @@
-# Docker
+# Docker installation
+```bash
+# removes older version docker and install new version
+user@host> sudo apt-get remove remove docker docker-engine docker.io containerd runc
+user@host> sudo apt update
+user@host> sudo apt install apt-transport-https ca-certificates curl software-properties-common
+user@host> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+user@host> sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+user@host> sudo apt update
+user@host> apt-cache policy docker-ce
+user@host> sudo apt install docker-ce
 
-# Docker Build(Dockerfile)
+# list docker version and process
+user@host> sudo service docker start
+user@host> sudo docker version
+user@host> sudo docker ps
+user@host> sudo docker login
 ```
+
+# Builds docker image(Dockerfile)
+```bash
 # base image
 FROM ubuntu:18.04
 
