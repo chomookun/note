@@ -40,8 +40,12 @@ ip addr | grep etho
 4: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000 inet 172.24.117.69/20 brd 172.24.127.255 scope global eth0
 
 # set portproxy
-netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=172.24.117.69
+netsh interface portproxy add v4tov4 listenport=80 listenaddress=0.0.0.0 connectport=80 connectaddress=172.24.117.69
+netsh interface portproxy add v4tov4 listenport=443 listenaddress=0.0.0.0 connectport=443 connectaddress=172.24.117.69
 
 # show portproxy
 netsh interface portproxy show all
+
+# delete portproxy
+netsh interface portproxy delete v4tov4 listenport=8080 listenaddress=0.0.0.0
 ```

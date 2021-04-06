@@ -22,6 +22,9 @@ frontend http_frontend
 	use_backend shellinabox if host_shellinabox
 	use_backend code-server if host_code-server
 
+	# default
+	default-backend shellinabox
+
 # service shellinabox
 backend shellinabox
 	balance roundrobin
