@@ -21,20 +21,19 @@ git config --global user.email "chomookun@gmail.com"
 # sets default editor
 git config --global core.editor vi
 
+# sets credentails option
+git config --global credential.helper store
+
 # list config
 git config --list
 
 ```
 
 
-# Store credential
-```shell
-$ git config --global credential.helper store
-```
 
 # Reset file
-```shell
-$ git checkout [Source]
+```bash
+git checkout [Source]
 ```
 
 
