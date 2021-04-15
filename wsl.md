@@ -1,5 +1,10 @@
 # WSL Installation
 
+## BIOS configuration
+Advanced Frequency Settings > Advanced CPU Core Settings > SVM Mode > enable
+
+
+## Runs powershell as administrator
 ```powershell
 # window subsystem
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -7,6 +12,8 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 # virtual machine
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 
+# restart
+Restart-Computer
 ```
 
 # Updates WSL2
@@ -16,6 +23,9 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 ```powershell
 # sets defualt version
 wsl --set-default-version 2
+
+# install ubuntu from Microsoft Store
+https://aka.ms/wslstore
 
 # list
 wsl -l -v
