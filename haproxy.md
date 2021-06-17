@@ -11,7 +11,7 @@ sudo vim /etc/haproxy/haproxy.cfg
 # defines fontend
 frontend http_frontend
 	bind *:80
-    bind *:443 ssl crt /etc/haproxy/ssl/mydomain.pem
+	bind *:443 ssl crt /etc/haproxy/ssl/mydomain.pem
 	reqadd X-Forwarded-Proto:\ http
 
 	# define host
@@ -21,9 +21,6 @@ frontend http_frontend
 	# figure out which one to use
 	use_backend shellinabox if host_shellinabox
 	use_backend code-server if host_code-server
-
-	# default
-	default-backend shellinabox
 
 # service shellinabox
 backend shellinabox
