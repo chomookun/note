@@ -15,22 +15,22 @@ frontend http_frontend
 	reqadd X-Forwarded-Proto:\ http
 
 	# define host
-	acl host_shellinabox hdr(host) -i shellinabox.chomookun.net
-	acl host_code-server hdr(host) -i code-server.chomookun.net
+	acl host_ssh hdr(host) -i ssh.chomookun.net
+	acl host_duice hdr(host) -i duice.chomookun.net
 
 	# figure out which one to use
-	use_backend shellinabox if host_shellinabox
-	use_backend code-server if host_code-server
+	use_backend ssh if host_ssh
+	use_backend duice if host_duice
 
-# service shellinabox
-backend shellinabox
+# service ssh
+backend ssh
 	balance roundrobin
-	server server1 127.0.0.1:4200
+	server server1 127.0.0.1:4200 ssl check verify none
 
-# service code-server
+# service duice
 backend code-server
 	balance roundrobin
-	server server1 127.0.0.1:8080
+	server server1 127.0.0.1:8080 ssl check verify none
 
 ...
 
