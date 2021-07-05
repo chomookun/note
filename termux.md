@@ -28,6 +28,13 @@ $ termux-style
 ```shell
 $ git clone https://github.com/MrAdityaAlok/java-in-termux.git
 $ cd ./java-in-termux && ./install.sh
+
+#or
+$ wget https://github.com/suhan-paradkar/java-in-termux/releases/download/OpenJDK9/openjdk-9-jre-headless_9.2017.8.20-1_arm.deb
+
+
+$ wget https://github.com/SHivnaTH13/Termux-OpenJDK/releases/download/v8-232/openjdk-8-jdk_8u232.deb
+
 ```
 and restart termux.
 
