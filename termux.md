@@ -1,5 +1,9 @@
 # Termux in android
 
+## Storage setup
+```shell
+$ termux-setup-storage
+```
 
 ## Installs packages
 ```shell
