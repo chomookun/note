@@ -15,4 +15,3 @@ $ ./bin/start-all.sh
 // shutdown 
 $ ./bin/start-stop.sh
 ```
-

@@ -29,6 +29,35 @@ git config --list
 
 ```
 
+# Creates new repositoryy
+```bash
+git init
+git remote add [URL]
+git branch -M main
+git push -u origin main
+```
+
+# Branch
+```bash
+# list branches
+git branch
+
+# creates branch
+git branch ${branchName}
+
+# switch branch
+git checkoutn ${branchName}
+
+# merge branch
+git merge ${branchName}
+
+```
+
+# View history
+```bash
+# prints log with graph
+git log --graph
+```
 
 
 # Reset file
