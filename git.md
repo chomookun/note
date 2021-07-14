@@ -25,7 +25,10 @@ git config --global core.editor vi
 git config --global credential.helper store
 
 # list config
-git config --list
+git config --global --list
+
+# unset config
+git config --global --unset [item]
 
 ```
 
@@ -51,7 +54,31 @@ git checkoutn ${branchName}
 # merge branch
 git merge ${branchName}
 
+# remote branch
+git branch -d ${branchName}
 ```
+
+# Merge branch
+```bash
+# checkout branch
+git checkout main
+
+# merge branch
+git merge ${branchName}
+```
+
+# Merge stratege
+```bash
+# sets config
+git config --global merge.ours.driver true
+
+# creates .gitattributes
+vim .gitattributes
+...
+conf/* merge=ours
+...
+```
+
 
 # View history
 ```bash
@@ -59,6 +86,11 @@ git merge ${branchName}
 git log --graph
 ```
 
+# Rebase
+```bash
+# rebase last 5
+git rebase -i @~5
+```
 
 # Reset file
 ```bash
