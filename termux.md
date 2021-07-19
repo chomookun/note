@@ -24,6 +24,19 @@ $ cd ./termux-style && ./install
 $ termux-style
 ```
 
+# configuration file
+```bash
+vim ~.termux/termux.properties
+...bash
+
+# full screen mode
+fullscreen=true
+
+# sets language input
+enforce-char-based-input=true
+...
+```
+
 ## Installs JDK
 ```shell
 $ git clone https://github.com/MrAdityaAlok/java-in-termux.git
