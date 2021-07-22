@@ -12,7 +12,7 @@ vim ~/.config/code-server/config.yaml
 ...
 bind-addr: 0.0.0.0:8080
 auth: password
-password: chancks77!
+password:${password} 
 cert: true
 ...
 ```
