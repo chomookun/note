@@ -1,11 +1,18 @@
 # Code-Server(Web based VSCode)
 
-## Installation
+## Installation(linux)
 ```bash
 wget https://github.com/cdr/code-server/releases/download/v3.9.2/code-server-3.9.2-linux-amd64.tar.gz
 tar -xvf ./code-server-*
 ln -s ./code-server-* ./code-server
 ```
+
+## Installation(termux in android)
+``bash
+pkg install nodejs yarn build-essential python
+yarn global add code-server
+``
+
 ## Configuration
 ```bash
 vim ~/.config/code-server/config.yaml
