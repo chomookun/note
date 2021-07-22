@@ -24,10 +24,12 @@ $ cd ./termux-style && ./install
 $ termux-style
 ```
 
-# configuration file
+# termux settingse
 ```bash
 vim ~.termux/termux.properties
 ...bash
+# theme
+use-black-ui=true
 
 # full screen mode
 fullscreen=true
