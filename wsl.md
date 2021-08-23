@@ -1,6 +1,13 @@
 # WSL Installation
 
 ## BIOS configuration
+```powershell
+# checks
+Systeminfo.exe
+...
+펌웨어에 가상화 사용: 아니요
+...
+```
 Advanced Frequency Settings > Advanced CPU Core Settings > SVM Mode > enable
 
 
@@ -40,10 +47,9 @@ Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBas
 # 2. Installs Ubuntu distro
 Add-AppxPackage .\Ubuntu.appx
 
-# 3. listing Ubutu distro package
+# 3. (Optional) Listing Ubutu distro package and Remove
 Get-AppxPackage | select-string -pattern Ubuntu  
-
-
+RemoveAppxPackage ${package-name}
 
 # list
 wsl -l -v
