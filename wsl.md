@@ -27,8 +27,14 @@ Restart-Computer
 # sets defualt version
 wsl --set-default-version 2
 
-# install ubuntu from Microsoft Store
+# [ONLINE] install ubuntu from Microsoft Store
 https://aka.ms/wslstore
+
+# [OFFLINE]
+# 1. export Linux Subsystem Image (from PC connected to Internet)
+
+# 2. import Linux Subsystem Image
+
 
 # list
 wsl -l -v
