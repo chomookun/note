@@ -40,16 +40,23 @@ wsl --set-default-version 2
 # [ONLINE Market] install ubuntu from Microsoft Store
 https://aka.ms/wslstore
 
-# [OFFLINE Manual]
-# 1. download Ubuntu distro (PC connected to Internet)
+# [OFFLINE Manual] download Ubuntu distro (PC connected to Internet)
 Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
 
-# 2. Installs Ubuntu distro
+# Installs Ubuntu distro
 Add-AppxPackage .\Ubuntu.appx
+
+# Enters username and password
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: chomookun
+New password:
+Retype new password:
 
 # 3. (Optional) Listing Ubutu distro package and Remove
 Get-AppxPackage | select-string -pattern Ubuntu  
-RemoveAppxPackage ${package-name}
+Remove-AppxPackage ${package-name}
 
 # list
 wsl -l -v
