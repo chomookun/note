@@ -12,6 +12,9 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 # virtual machine
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 
+# enable Hyper-V
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+
 # restart
 Restart-Computer
 ```
