@@ -21,6 +21,9 @@ Restart-Computer
 <https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi>
 
 ```powershell
+# install 
+./wsl_update_x64.msi
+
 # sets defualt version
 wsl --set-default-version 2
 
