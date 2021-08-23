@@ -32,10 +32,15 @@ https://aka.ms/wslstore
 
 # [OFFLINE Manual]
 # 1. download Ubuntu distro (PC connected to Internet)
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
 
 # 2. Installs Ubuntu distro
 Add-AppxPackage .\Ubuntu.appx
+
+# 3. listing Ubutu distro package
+Get-AppxPackage | select-string -pattern Ubuntu  
+
+
 
 # list
 wsl -l -v
