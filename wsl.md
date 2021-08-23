@@ -26,7 +26,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 Restart-Computer
 ```
 
-# Updates WSL2
+## Updates WSL2 and Installs Distro
 
 <https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi>
 
@@ -62,7 +62,11 @@ wsl --set-version Unbuntu-20.04 2
 
 ```
 
-# Port forwarding(manual)
+--------------------------------------------------------------------------------------------------
+
+# Port forwarding
+
+## manual
 ```powershell
 # checks WSL network
 ifconfig /all
@@ -84,9 +88,9 @@ netsh interface portproxy show all
 netsh interface portproxy delete v4tov4 listenport=8080 listenaddress=0.0.0.0
 ```
 
-# Port forwarding(script)
+## script
 
-## creates script
+### creates script
 ```powershell
 # wsl_port_forward.ps1
 $remoteport = bash.exe -c "ifconfig eth0 | grep 'inet '"
@@ -124,7 +128,7 @@ for( $i = 0; $i -lt $ports.length; $i++ ){
   iex "netsh interface portproxy add v4tov4 listenport=$port listenaddress=$addr connectport=$port connectaddress=$remoteport";
 }
 ```
-## Executes script
+### Executes script
 ```powershell
 powershell -ExecutionPolicy Bypass -Command .\wsl_port_forward.ps1
 ```
