@@ -22,19 +22,20 @@ Restart-Computer
 
 ```powershell
 # install 
-./wsl_update_x64.msi
+.\wsl_update_x64.msi
 
 # sets defualt version
 wsl --set-default-version 2
 
-# [ONLINE] install ubuntu from Microsoft Store
+# [ONLINE Market] install ubuntu from Microsoft Store
 https://aka.ms/wslstore
 
-# [OFFLINE]
-# 1. export Linux Subsystem Image (from PC connected to Internet)
+# [OFFLINE Manual]
+# 1. download Ubuntu distro (PC connected to Internet)
+Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
 
-# 2. import Linux Subsystem Image
-
+# 2. Installs Ubuntu distro
+Add-AppxPackage .\Ubuntu.appx
 
 # list
 wsl -l -v
