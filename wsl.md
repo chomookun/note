@@ -41,10 +41,10 @@ wsl --set-default-version 2
 https://aka.ms/wslstore
 
 # [OFFLINE Manual] download Ubuntu distro (PC connected to Internet)
-Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile wsl_ubuntu.appx -UseBasicParsing
 
 # Installs Ubuntu distro
-Add-AppxPackage .\Ubuntu.appx
+Add-AppxPackage .\wsl_ubuntu.appx
 
 # Enters username and password
 Installing, this may take a few minutes...
@@ -54,7 +54,7 @@ Enter new UNIX username: chomookun
 New password:
 Retype new password:
 
-# 3. (Optional) Listing Ubutu distro package and Remove
+# (Optional) Listing Ubutu distro package and Remove
 Get-AppxPackage | select-string -pattern Ubuntu  
 Remove-AppxPackage ${package-name}
 
@@ -64,9 +64,8 @@ wsl -l -v
   NAME            STATE           VERSION
 * Ubuntu-20.04    Running         1
 
-# changes WSL version
+# (Optional) changes WSL version
 wsl --set-version Unbuntu-20.04 2
-
 ```
 
 --------------------------------------------------------------------------------------------------
