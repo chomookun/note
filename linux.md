@@ -82,6 +82,6 @@ sshfs ${user}@192.168.0.10:/home/dir /mnt/dir
 sudo apt install ucspi-tcp
 
 # start tcpserver
-tcpserver -v -RHl0 0.0.0.0 1234 sh -c 'echo -e "HTTP/1.1 200 OK\r\n" && tail -F /var/log/haproxy.log'
+tcpserver -v -RHl0 0.0.0.0 1234 sh -c 'echo -e "HTTP/1.1 200 OK\r\n" && timer 60 tail -F /var/log/haproxy.log'
 ```
 
