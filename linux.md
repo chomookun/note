@@ -68,6 +68,14 @@ sudo mv /home_bak/* /home
 sudo update-rc.d apache2 defaults
 ```
 
+# SSHFS
+```bash
+# install sshfs
+sudo apt install sshfs
+# mount directory
+sshfs ${user}@192.168.0.10:/home/dir /mnt/dir
+```
+
 # How to log tailing via tpcserver
 ```bash
 # install ucspi-tcp
