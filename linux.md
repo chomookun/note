@@ -67,3 +67,13 @@ sudo mv /home_bak/* /home
 ```bash
 sudo update-rc.d apache2 defaults
 ```
+
+# How to log tailing via tpcserver
+```bash
+# install ucspi-tcp
+sudo apt install ucspi-tcp
+
+# start tcpserver
+tcpserver -v -RHl0 0.0.0.0 1234 sh -c 'echo -e "HTTP/1.1 200 OK\r\n"; tail -F /var/log/haproxy.log'
+```
+
