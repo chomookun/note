@@ -20,7 +20,12 @@ source ~/.vimrc
 
 ## adds coc.vim
 
+
 ```bash
+# install
+curl -sL install-node.vercel.app/lts | sudo bash
+
+
 vim .vimrc
 ...
 Plugin 'neoclide/coc.nvim',{'branch':'releaase'}
