@@ -44,3 +44,34 @@ ENV TZ=Asia/Seoul
 ENV SPRING_PROFILES_ACTIVE
 
 ```
+
+# docker CLI example
+```bash
+# defines
+STAGE=dev
+image=837398788587.dkr.ecr.ap-northeast-2.amazonaws.com/sk/core-boot-batch
+image=837398788587.dkr.ecr.ap-northeast-2.amazonaws.com/sk/core-boot-api
+
+# remove container and image
+sudo docker rm $(sudo docker ps -a -q)
+sudo docker rmi $(sudo docker images -q)
+
+# docker login
+aws ecr get-login-password --region ap-northeast-2 | sudo docker login --username AWS --password-stdin 837398788587.dkr.ecr.ap-northeast-2.amazonaws.com
+
+# docker build
+sudo docker build -t ${image}:${STAGE} .
+
+# docker push
+sudo docker push ${image}:${STAGE}
+
+# docker run (batch)
+sudo docker run ${image}:${STAGE} com.kakaoinsure.core.exm.batch.sandbox.job.DbToDbWithTaskletJob 20110101 type=Mybatis limit=123
+
+# docker restart (api)
+sudo docker stop $(sudo docker container ps -q)
+sudo docker run -d -e SPRING_PROFILES_ACTIVE=${STAGE} -p 8080:8080 -v /home/ec2-user/logs:/home/ec2-user/logs ${image}:${STAGE}
+
+# docker inspect
+sudo docker run -it --entrypoint /bin/bash ${image}:${STAGE}
+```
