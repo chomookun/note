@@ -85,3 +85,12 @@ sudo apt install ucspi-tcp
 tcpserver -v -RHl0 0.0.0.0 1234 sh -c 'echo -e "HTTP/1.1 200 OK\r\n" && timer 60 tail -F /var/log/haproxy.log'
 ```
 
+# How to access remote desktop
+```bash
+sudo apt install xrdp
+sudo systemctl enable xrdp
+echo xfce4-session > ~/.xsession
+sudo service xrdp start
+```
+
+
