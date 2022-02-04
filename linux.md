@@ -87,6 +87,10 @@ tcpserver -v -RHl0 0.0.0.0 1234 sh -c 'echo -e "HTTP/1.1 200 OK\r\n" && timer 60
 
 # How to access remote desktop
 ```bash
+# install xfce4
+sudo apt install xfce4
+
+# install xrdp
 sudo apt install xrdp
 sudo systemctl enable xrdp
 echo xfce4-session > ~/.xsession
