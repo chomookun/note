@@ -58,7 +58,11 @@ pip3 install 'apache-airflow[mysql]'
 # edit config
 vim airflow.cfg
 ...
+# metadata connect
 sql_alchemy_conn = mysql://[user]:[password]@localhost:3306/airflow
+
+# reload plugins
+reload_on_plugin_change = True
 ...
 ```
 
@@ -79,11 +83,6 @@ airflow users create \
 
 # startup
 ```bash
-
-# webserver
-airflow webserver --port 8080
-
-# scheduler
-airflow scheduler
-
+# start
+airflow standalone
 ```
