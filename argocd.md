@@ -1,6 +1,9 @@
 # installation
 
 ```bash
+# create kube namespace
+kubectl create namespace argocd
+
 # install
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
