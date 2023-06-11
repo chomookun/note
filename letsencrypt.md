@@ -27,6 +27,6 @@ cat DOMAIN/fullchain.pem DOMAIN/privkey.pem > ./DOMAIN.pem
 sudo certbot renew --dry-run 
 
 # execute
-sudo certbot renew
+sudo certbot renew --cert-name "domain.com"
 ```
 
