@@ -1,11 +1,11 @@
 # Let's encrypt SSL Certificates
 
-## install
+## Install certbot
 ```shell
 sudo apt-get install certbot
 ```
 
-## execute create command
+## Execute create command
 ```shell
 sudo certbot certonly --manual --preferred-challenges dns -d "*.domain.com" -d "domain.com"
 ```
