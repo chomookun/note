@@ -20,3 +20,13 @@ https://toolbox.googleapps.com/apps/dig/#TXT/_acme-challenge.domain.com
 cd /etc/letsencrypt/live/
 cat DOMAIN/fullchain.pem DOMAIN/privkey.pem > ./DOMAIN.pem
 ```
+
+## Updates Certificate
+```shell
+# dry run
+sudo certbot renew --dry-run 
+
+# execute
+sudo certbot renew
+```
+
