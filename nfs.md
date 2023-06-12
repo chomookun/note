@@ -2,7 +2,7 @@
 
 ## Install nfs
 ```shell
-sudo apt install nfs-common
+sudo apt install nfs-common nfs-server
 ```
 
 ## Start service
