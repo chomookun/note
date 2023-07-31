@@ -55,18 +55,3 @@ certbot certonly --manual --manual-auth-hook /path/godaddy-auth-hook-script.sh -
 
 
 
-
-
-
-
-
-
-
-```shell
-# dry run
-sudo certbot renew --dry-run 
-
-# execute
-sudo certbot renew --cert-name "domain.com"
-```
-
