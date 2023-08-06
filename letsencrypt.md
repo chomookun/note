@@ -12,13 +12,13 @@ sudo certbot certonly --manual --preferred-challenges dns -d "*.domain.com" -d "
 ### create 1st/2nd DNS TXT record
 
 ### confirm 1st/2nd DNS TXT 
-https://toolbox.googleapps.com/apps/dig/#TXT/_acme-challenge.domain.com
-
+```shall
+dig _acme-challenge.{DOMAIN} txt
+```
 
 ## Merge PEM file
 ```shell
-cd /etc/letsencrypt/live/
-cat DOMAIN/fullchain.pem DOMAIN/privkey.pem > ./DOMAIN.pem
+sudo cat /etc/letsencrypt/live/{DOMAIN}/fullchain.pem /etc/letsencrypt/live/{DOMAIN}/privkey.pem > ./DOMAIN.pem
 ```
 
 
