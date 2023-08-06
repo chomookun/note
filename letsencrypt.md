@@ -49,21 +49,39 @@ curl -X PUT -H "Authorization: sso-key ${GD_Key}:${GD_Secret}" \
   "https://api.godaddy.com/v1/domains/${DOMAIN}/records/TXT/${TXT_NAME}"
 
 # dig
-for i in {1..6}; do
+for i in {1..10}; do
     dig_value=$(dig +short ${TXT_NAME}.${DOMAIN} txt);
     echo "dig_value:${dig_value}";
     if [ ${dig_value} == ${TXT_VALUE} ]; then
         break;
     fi
-    sleep 10
+    sleep 60
 done
 
 ```
 
-## executes certbot command
+## test dry-run
 ```shell
-certbot certonly --manual --manual-auth-hook /path/godaddy-auth-hook-script.sh --preferred-challenges dns -d {DOMAIN}
+sudo certbot certonly --manual --manual-auth-hook /path/godaddy-auth-hook-script.sh --preferred-challenges dns -d {DOMAIN} --dry-run
 ```
+
+## write scrypt
+```shell
+#!/bin/sh
+# certbot-renew.sh
+sudo certbot certonly --manual --manual-auth-hook /path/godaddy-auth-hook-script.sh --preferred-challenges dns -d {DOMAIN} --manual-public-ip-logging-ok
+sudo cat /etc/letsencrypt/live/{DOMAIN}/fullchain.pem /etc/letsencrypt/live/{DOMAIN}/privkey.pem > ./{DOMAIN}.pem
+
+```
+
+## regster crontab
+```shell
+sudo crontab -e
+...
+0 3 * * sun /path/certbot-renew.sh
+...
+```
+
 
 
 
