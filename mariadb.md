@@ -49,6 +49,7 @@ order by time_ms desc
 limit 10;
 
 ```
+
 ## Creates database and user, grant privileges
 ```sql
 -- creates database
@@ -60,7 +61,8 @@ create user 'test_user'@'%' identified by 'abcd1234!@#$';
 -- grant privileges
 grant all privileges on test_db.* to 'test_user'@'%';
 
-``
+```
+
 ## Settng slow query log
 ```shell
 # edit config
