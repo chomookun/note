@@ -61,4 +61,19 @@ create user 'test_user'@'%' identified by 'abcd1234!@#$';
 grant all privileges on test_db.* to 'test_user'@'%';
 
 ``
+## Settng slow query log
+```shell
+# edit config
+sudo vim /etc/mysql/my.cnf
+...
+# slow query log
+slow_query_log = 1
+slow_query_log_file = /home/mysql/log/slow_query.log
+long_query_time=5
+...
+
+# restart
+sudo systemctl restart mysql
+```
+
 
